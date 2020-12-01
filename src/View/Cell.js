@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//import './Cell.css';
 
 export default class Cell extends React.Component {
     render() {
@@ -8,12 +9,12 @@ export default class Cell extends React.Component {
                 className="cell"
                 onClick={this.props.onClick}
             >
-                {this.getCellJSX(this.props.row, this.props.column, this.props.content)}
+                {this.getCellInButtonJSX(this.props.content)}
             </button>
         )
     }
 
-    getCellJSX(row, column, content) {
+    /*getCellJSX(row, column, content) {
         if (!content) { 
             return ( //с точки зрения вёрстки, уг, но потом обязательно перепишу. !!УБЕДИТЬСЯ, ЧТО Я КОРРЕКТНО ПИШУ, ИБО JSX != HTML
                 <p>
@@ -24,7 +25,18 @@ export default class Cell extends React.Component {
             //заглушка, потому что пока такого быть не может, смотреть в renderCell и whatIsIn внутри GameField
             return;
         }
+    }*/
+
+    getCellInButtonJSX(content) {
+        if (content == null) {
+            return (
+                <p>
+                    ?
+                </p>
+            )
+        }
     }
+    
 
 
 }

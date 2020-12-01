@@ -3,6 +3,20 @@ import ReactDOM from 'react-dom';
 import Cell from './Cell.js';
 
 export default class Gamefield extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.field_front = this.getNullFieldFront();
+    }
+
+    getNullFieldFront() {
+        let arr = new Array(10);
+        for (let i = 0; i < 10; i++) {
+            arr.i = new Array(10).fill(null);
+        }
+        return arr;
+    }
+
     render() {
         return (
             <div>
@@ -145,7 +159,7 @@ export default class Gamefield extends React.Component {
                 row={row}
                 column={column}
                 content={this.whatIsIn(row, column)}
-                onClick={this.handleClick}
+                onClick={() => this.handleClick(row, column)}
             />
 
             /* <button 
@@ -159,13 +173,17 @@ export default class Gamefield extends React.Component {
         );
     }
 
-    whatIsIn() {
-        // Это заглушка сейчас, которая будет возвращать null
-        return null;
+    whatIsIn(row, column) {
+        return this.field_front[row, column];
     }
 
-    handleClick() {
+    handleClick(row, column) {
         //заглушка, просто выводит alert
-        alert("нажатие на клетку");
+        alert(`Произошёл клик по клетке row:${row} column:${column}`);
+        if (this.whatIsIn(row, column)) {
+            alert(`Вы нажали по ранее открытой клетке`);
+            return;
+        }
+        
     }
 }
