@@ -1,0 +1,14 @@
+.cell {
+    width: 8%;
+    min-width: 30px;
+    height: 8%;
+    min-height: 30px;
+
+    margin: 2px;
+    background: #0f0a1f;
+    color: #e4f587;
+}
+
+.cell__text{
+    font-size: 8px;
+}

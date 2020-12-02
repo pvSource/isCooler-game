@@ -184,6 +184,6 @@ export default class Gamefield extends React.Component {
             alert(`Вы нажали по ранее открытой клетке`);
             return;
         }
-        
+
     }
 }

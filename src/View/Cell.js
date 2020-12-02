@@ -8,11 +8,16 @@ export default class Cell extends React.Component {
             <button
                 className="cell"
                 onClick={this.props.onClick}
+                //onmouseover={() => this.handleMouseOver()}
             >
                 {this.getCellInButtonJSX(this.props.content)}
             </button>
         )
     }
+
+    //handleMouseOver() {
+
+    //}
 
     /*getCellJSX(row, column, content) {
         if (!content) { 
@@ -30,7 +35,7 @@ export default class Cell extends React.Component {
     getCellInButtonJSX(content) {
         if (content == null) {
             return (
-                <p>
+                <p className = 'cell__text'>
                     ?
                 </p>
             )
