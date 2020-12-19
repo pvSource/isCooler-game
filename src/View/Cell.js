@@ -39,6 +39,30 @@ export default class Cell extends React.Component {
                     ?
                 </p>
             )
+        } else if (content == "ship") {
+            return (
+                <p className = 'cell__text'>
+                    ship
+                </p>
+            )
+        } else if (content == "empty") {
+            return (
+                <p className = 'cell__text'>
+                    empty
+                </p>
+            )
+        } else if (content == "x2") {
+            return (
+                <p className = 'cell__text'>
+                    x2
+                </p>
+            )
+        } else if (content == "bomb") {
+            return (
+                <p className = 'cell__text'>
+                    bomb
+                </p>
+            )
         }
     }
     
