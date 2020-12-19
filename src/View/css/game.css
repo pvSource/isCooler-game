@@ -1,0 +1,11 @@
+.game__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game__current-player {
+    font-size: 16px;
+    font-weight: bold;
+}

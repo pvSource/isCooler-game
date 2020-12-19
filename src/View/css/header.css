@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #dfe000;
+    border-radius: 15px;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.header__logo {
+    max-height: 50px;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.header__logo:hover {
+    transform: scale(1.3) rotate(720deg);
+    transition: 0.5s;
+}
+
+.header__load, .header__save {
+    padding: 10px;
+}
+
