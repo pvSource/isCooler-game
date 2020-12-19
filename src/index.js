@@ -6,6 +6,7 @@ import './View/Cell.css';
 import './View/css/header.css';
 import './View/css/main.css';
 import './View/css/game.css';
+import './View/css/footer.css';
 
 ReactDOM.render(
     <Game />,

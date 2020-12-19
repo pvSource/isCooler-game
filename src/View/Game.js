@@ -1,7 +1,7 @@
 import React from 'react';
 import Gamefield from './Gamefield.js';
 import Header from './Header.js';
-//import Footer from './Footer.js';
+import Footer from './Footer.js';
 
 export default class Game extends React.Component {
     render() {
@@ -9,7 +9,7 @@ export default class Game extends React.Component {
             <div>
                 <Header />
                 <Gamefield />
-                {/* <Footer /> */}
+                <Footer />
             </div>
         )
     }
