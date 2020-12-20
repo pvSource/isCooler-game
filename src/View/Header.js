@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Commands from './../Controler/Commands.js'
 
 export default class Gamefield extends React.Component {
     render() {
@@ -9,11 +10,8 @@ export default class Gamefield extends React.Component {
                     
                 </div>
 
-                <div className="header__load">
-                    Загрузиться
-                </div>
-                <div className="header__save">
-                    Сохраниться
+                <div className="header__name">
+                    <marquee scrollamount="4">isCooler</marquee>
                 </div>
 
             </header>

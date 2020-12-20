@@ -168,6 +168,14 @@ export default class Gamefield extends React.Component {
                         </div>    
                     </section>
                 </div>
+
+                <div className="header__load" onClick={() => Commands.save(this)}>
+                    Загрузиться
+                </div>
+                <div className="header__save"
+                    onClick={() => Commands.save(this)}>
+                    Сохраниться
+                </div>
             </main>
         )
     }
@@ -238,5 +246,10 @@ export default class Gamefield extends React.Component {
         let new_field_front = this.state.field_front.slice();
         new_field_front[row][column] = current_cell_content;
                 this.setState({ ...this.state, field_front: new_field_front});
+    }
+
+    copy() { //???
+        let copy_state = {...this.state};
+        return copy_state;
     }
 }

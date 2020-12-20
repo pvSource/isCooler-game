@@ -3,8 +3,8 @@ class GameFieldReal {
         this.field = [undefined]; //Это всё временные решения
         this.createEmptyField(); //потому что иначе не включается
         this.createField();
-        this.players_score = [0, 0]; //Поле будет хранить в себе, кто ходит и количество очков
-        this.current_player = 0; 
+        //this.players_score = [0, 0]; //Поле будет хранить в себе, кто ходит и количество очков
+        //this.current_player = 0; 
         console.log("Поле(модель) создано");
     }
 
@@ -52,6 +52,12 @@ class GameFieldReal {
 
     getRealCellContent(row, column) {
         return (this.field[row][column].content);
+    }
+
+    copy() {
+        let copy_field = new GameFieldReal();
+        copy_field.field = this.field;
+        return copy_field;
     }
 }
 
