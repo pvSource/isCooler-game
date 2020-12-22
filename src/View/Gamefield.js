@@ -143,7 +143,7 @@ export default class Gamefield extends React.Component {
                             {this.renderCell(7, 9)}                    
                         </div>
                         <div className="gamefield__row">
-                            {this.renderCell(8, 1)}
+                            {this.renderCell(8, 0)}
                             {this.renderCell(8, 1)}
                             {this.renderCell(8, 2)}
                             {this.renderCell(8, 3)}
@@ -170,11 +170,11 @@ export default class Gamefield extends React.Component {
                 </div>
 
                 <div className="header__load" onClick={() => Commands.save(this)}>
-                    Загрузиться
+                    Сохраниться
                 </div>
                 <div className="header__save"
-                    onClick={() => Commands.save(this)}>
-                    Сохраниться
+                    onClick={() => Commands.load(this)}>
+                    Загрузиться
                 </div>
             </main>
         )
@@ -214,13 +214,18 @@ export default class Gamefield extends React.Component {
 
         //Назначение очков и/или переопределение хода
         if (current_cell_content == 'empty' && !isBomb) {
+            this.state.opened_cells++;
+            //alert(`Вы промахнулись!\nСледующий игрок приготовьтесь\nИгрок ${Number(!Boolean(this.state.current_player))}`);
             this.state.current_player = Number(!Boolean(this.state.current_player));
         } else {
             if (current_cell_content == "ship") {
                 this.state.score[this.state.current_player]++;
+                this.state.opened_cells++;
             } else if (current_cell_content == "x2") {
                 this.state.score[this.state.current_player] = this.state.score[this.state.current_player]*2;
+                this.state.opened_cells++;
             } else if (current_cell_content == "bomb") {
+                this.state.opened_cells++;
                 for (let i = row - 1; i <= row + 1; i++) {
                     for (let j = column - 1; j <= column + 1; j++) {
                         if (i >= 0 && i < 10 && j >=0 && j < 10 && !(i == row && column == j)) {
@@ -245,7 +250,21 @@ export default class Gamefield extends React.Component {
         //Переписываем стэйт для перерендера
         let new_field_front = this.state.field_front.slice();
         new_field_front[row][column] = current_cell_content;
-                this.setState({ ...this.state, field_front: new_field_front});
+        this.setState({ ...this.state, field_front: new_field_front});
+
+        let opened_cells = 0;
+        for(let i = 0; i < 10; i++) {
+            for(let j = 0; j < 10; j++) {
+                if (this.state.field_front[i][j]) {
+                    opened_cells++;
+                }
+            }
+        }
+        console.log(opened_cells);
+        if (opened_cells == 100) {
+            let winner = (this.state.score[0] > this.state.score[1] ? 'Победил 0 игрок' : this.state.score[0] < this.state.score[1] ? 'Победил 1 игрок' : 'Ничья');
+            alert(winner);
+        }        
     }
 
     copy() { //???

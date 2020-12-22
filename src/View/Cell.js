@@ -35,33 +35,23 @@ export default class Cell extends React.Component {
     getCellInButtonJSX(content) {
         if (content == null) {
             return (
-                <p className = 'cell__text'>
-                    ?
-                </p>
+                <img className="cell__image cell__image_question" src="/img/question.png"></img>
             )
         } else if (content == "ship") {
             return (
-                <p className = 'cell__text'>
-                    ship
-                </p>
+                <img className="cell__image cell__image_ship" src="/img/ship.png"></img>
             )
         } else if (content == "empty") {
             return (
-                <p className = 'cell__text'>
-                    empty
-                </p>
+                <img className="cell__image cell__image_sea" src="/img/sea.png"></img>
             )
         } else if (content == "x2") {
             return (
-                <p className = 'cell__text'>
-                    x2
-                </p>
+                <img className="cell__image cell__image_x2" src="/img/x2.png"></img>
             )
         } else if (content == "bomb") {
             return (
-                <p className = 'cell__text'>
-                    bomb
-                </p>
+                <img className="cell__image cell__image_bomb" src="/img/bomb.png"></img>
             )
         }
     }

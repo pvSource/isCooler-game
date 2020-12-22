@@ -1,3 +1,7 @@
+import Memento from "./Memento";
+import MementoReal from "./MementoReal";
+import * as Commands from './../Controler/Commands.js'
+
 class GameFieldReal {
     constructor() {
         this.field = [undefined]; //Это всё временные решения
@@ -58,6 +62,19 @@ class GameFieldReal {
         let copy_field = new GameFieldReal();
         copy_field.field = this.field;
         return copy_field;
+    }
+
+    createMemento(view_state) {
+        let game_state = {real: this.copy(), view: view_state};
+        return new MementoReal(game_state);
+    }
+
+    //getMementoView(snapshot)
+    
+    restoreMemento(snapshot) {
+        this.field = snapshot.game_state.real.copy().field;
+        //return snapshot.view.copy();
+        //Commands.setViewState(snapshot.view.copy());        
     }
 }
 

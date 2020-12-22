@@ -7,8 +7,12 @@
 }
 
 .game__current-player {
-    font-size: 16px;
+    font-size: 48px;
     font-weight: bold;
+}
+
+.game__counter {
+    font-size: 22px;
 }
 
 .game__gamefield {

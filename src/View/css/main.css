@@ -7,14 +7,15 @@
 body { 
     height: 100%;
     font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
+    font-size: 14px;
     background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
             linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
             linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
 }
 
 .container {
-    width: 90%;
-    max-width: 500px;
-    min-width: 400px;
+    min-width: 800px;
+    max-width: 1200px;
+    margin: auto;
+    text-align:center;
 }

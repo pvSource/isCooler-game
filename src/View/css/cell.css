@@ -1,0 +1,43 @@
+.cell {
+    width: 70px;
+    height: 70px;
+    margin: 2px;
+    color: #e4f587;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0);
+}
+
+.cell__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.cell__image_question {
+    background-color: #dfe000;
+    opacity: 0.2;
+}
+
+.cell__image_sea {
+    background-color: #7eb3c5;
+    opacity: 0.5;
+}
+
+.cell__image_x2 {
+    background: rgb(195,113,91);
+    background: radial-gradient(circle, rgba(195,113,91,1) 0%, rgba(196,33,33,1) 39%, rgba(128,126,118,1) 100%);
+    opacity: 0.9;
+}
+
+.cell__image_bomb {
+    background: rgb(219,221,82);
+    background: radial-gradient(circle, rgba(219,221,82,1) 0%, rgba(193,43,43,1) 78%, rgba(0,212,255,1) 100%);
+    opacity: 0.99;
+}
+
+.cell__image_ship {
+    background: rgb(197,197,204);
+    background: rgb(130,218,135);
+    background: radial-gradient(circle, rgba(130,218,135,1) 0%, rgba(5,255,103,1) 42%, rgba(181,167,83,1) 100%);
+}
